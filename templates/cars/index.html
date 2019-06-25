@@ -1,0 +1,56 @@
+{%extends 'base/base.html'%}
+
+{%block title%}
+Cars
+{%endblock%}
+
+{%block body%}
+ <table class="table tabler-border">
+     <thead>
+         <th>
+             ID
+         </th>
+         <th>
+            TIPO
+         </th>
+         <th>
+            PLACA
+         </th>
+         <th>
+             FECHA DE ENTRADA
+         </th>
+         <th>
+             FECHA DE SALIDA
+         </th>
+         <th>
+             DUEÑO
+         </th>
+         
+     </thead>
+     <tbody>
+            {% if cars %}
+            {% for car in cars %}
+            
+         <tr>
+             <td>{{car.id}}</td>
+             <td>{{car.tipo}}</td>
+             <td>{{car.placa}}</td>
+             <td>{{car.fecha_in}}</td>
+             <td>{{car.fecha_out}}</td>
+             <td>{{car.owner}}</td>
+        
+         <td>
+                <a href="" class="btn btn-warning">Editar</a>
+                <a href="" class="btn btn-danger">Eliminar</a>
+         </td>
+         </tr>
+         
+         {% endfor %}
+
+    {% else %}
+    <h1>no hay registros</h1>
+    {% endif %}
+     </tbody>
+ </table>
+
+{%endblock%}
